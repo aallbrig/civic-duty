@@ -1,0 +1,27 @@
+<div>
+	<h1>{{ activity.title}}</h1>
+	<div class="panel" ng-class="(flash.success)?'panel-success':'panel-danger'" ng-show="flash">
+		<div class="panel-heading">
+			{{ (flash.success)? "Success!" : "Error!" }}
+		</div>
+		<div class="panel-body">
+			{{ flash.error || flash.success }}
+	    	<div class="btn form-control" ng-class="(flash.success)?'btn-success':'btn-danger'" ng-click="flash = ''">Dismiss</div>
+		</div>
+	</div>
+	<p>{{ activity.description }}</p>
+	<table class="table">
+		<tr>
+			<th>Points</th>
+			<th>Morality</th>
+			<th>Reputation</th>
+		</tr>
+		<tr>
+			<td>{{ activity.points }}</td>
+			<td>{{ activity.morality }}</td>
+			<td>+1</td>
+		</tr>
+	</table>
+	<div class="btn btn-primary form-control" ng-click="completeActivity()" ng-hide="alreadyComplete()">Complete</div>
+	<h3 ng-show="alreadyComplete()">Already completed this!</h3>
+</div>

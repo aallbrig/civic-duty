@@ -1,0 +1,29 @@
+<div>
+	<h1 class="col-xs-6">Play page</h1>
+	<div class="btn btn-default col-xs-6" style="margin-top: 20px;" ng-click="showForm = !showForm">{{ (showForm)? 'Hide Form' : 'Create New Activity' }}</div>
+	<div class="clearfix"></div>
+	<div ng-show="showForm" ng-include="'partials/newActivityForm.html'"></div>
+	<!-- {{activities | json}} -->
+	<div class="panel" ng-class="(activity.morality > 0)?'panel-success':$(activity.morality == 0)?'panel-default':'panel-danger'" ng-repeat="activity in activities | limitTo: activityLimit" ng-hide="">
+	  <div class="panel-heading">{{activity.title}}</div>
+	  <div class="panel-body">
+	    <p>{{activity.description}}</p>
+	    <table class="table">
+			<tr>
+				<th>Points</th>
+				<th>Morality</th>
+				<th>Reputation</th>
+			</tr>
+			<tr>
+				<td>{{ activity.points }}</td>
+				<td>{{ activity.morality }}</td>
+				<td>+1</td>
+			</tr>
+		</table>
+	    <a class="btn form-control" ng-class="(activity.morality > 0)?'btn-success':$(activity.morality == 0)?'btn-default':'btn-danger'" href="#/activity-detail/{{activity.id}}">More</a>
+	  </div>
+	</div>
+	<hr>
+	<button class="btn btn-default col-xs-6" ng-click="more()">More</button>
+	<button class="btn btn-default col-xs-6" ng-click="less()">Less</button>
+</div>

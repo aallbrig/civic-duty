@@ -1,0 +1,17 @@
+{
+  "name": "civic-duty",
+  "version": "0.0.0",
+  "description": "do you civic duty app",
+  "authors": [
+    "Andrew Allbright"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

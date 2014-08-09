@@ -1,0 +1,27 @@
+<div>
+	<h1>Community page</h1>
+	<div class="panel" ng-class="(user.morality > 0)?panel-success:panel-danger" ng-repeat="user in users | limitTo: userLimit | orderBy: user.points">
+	  <div class="panel-heading">User: {{user.username}}</div>
+	  <div class="panel-body">
+	    <table class="table">
+			<tr>
+				<th>Points</th>
+				<th>Morality</th>
+				<th>Reputation</th>
+			</tr>
+			<tr>
+				<td>{{ user.points }}</td>
+				<td>{{ user.morality }}</td>
+				<td>{{ user.reputation }}</td>
+			</tr>
+		</table>
+		<h3>Recently completed activities</h3>
+		<div ng-repeat="activity in user.activities | limitTo: activityLimit">
+			{{activity.title}}
+		</div>
+		<h3 ng-show="user.activities.length == 0">No recent activities completed!</h3>
+	    <a class="btn btn-success form-control" href="#/profile/{{user.id}}">More</a>
+	  </div>
+	</div>
+	{{ users | json }}
+</div>

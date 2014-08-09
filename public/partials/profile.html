@@ -1,0 +1,49 @@
+<div style="padding:14px;">
+	<div class="row">
+		<div class="col-xs-4">
+			<img class="img-responsive" src="{{user.img}}" alt="" style="border:4px solid black;margin-top:30px;">
+		</div>
+		<div class="col-xs-4">
+			<h1>{{user.username}}</h1>
+			<br>
+			<p>Reputation: {{user.reputation}}</p>
+			<p>Points: {{user.points}}</p>
+			<p>Morality: {{user.morality}}</p>
+		</div>
+		<div class="col-4">
+			<h3>Quote</h3>
+			{{user.flavorText}}
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="progress progress-striped active">
+		  <div class="progress-bar" ng-class="(user.morality > 0)?'progress-bar-success':'progress-bar-danger'"  role="progressbar" aria-valuenow="{{getPercent()}}" aria-valuemin="-100" aria-valuemax="100" ng-style="{width : ( getPercentage() + '%' ) }">
+		    <span class="sr-only"></span>
+		  </div>
+		</div>
+	</div>
+	<!-- {{ user | json }} -->
+	<hr>
+	<h3>Activities complete</h3>
+	<table class="table table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Points</th>
+			<th>Morality</th>
+		</tr>
+		<tr ng-repeat="activity in user.activities | limitTo: activityLimit">
+			<td>
+				{{activity.title}}
+			</td>
+			<td>
+				{{activity.points}}
+			</td>
+			<td>
+				{{activity.morality}}
+			</td>
+		</tr>
+	</table>
+	<button class="btn btn-default col-xs-6" ng-click="more()">More</button>
+	<button class="btn btn-default col-xs-6" ng-click="less()">Less</button>
+</div>

@@ -1,0 +1,46 @@
+<form name="newActivityForm" class="panel panel-default" ng-controller="NewActivityCtrl">
+	<div class="panel-heading">
+		Add New Activity!
+	</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<span class="error" ng-show="newActivityForm.newactivity.title.$error.required">Required!</span>
+			<label for="title">Activity Name</label>
+			<input type="text" class="form-control" placeholder="Enter title" ng-model="newactivity.title" required>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Description</label>
+			<textarea class="form-control" rows="3" placeholder="Enter a brief description" ng-model="newactivity.description"></textarea>
+		</div>
+		Morality:
+		<select>
+			<option>-5</option>
+			<option>-4</option>
+			<option>-3</option>
+			<option>-2</option>
+			<option>-1</option>
+			<option selected>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		Point Value:
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		Reputation: +1
+		<hr>
+		<div class="btn btn-primary form-control" ng-click="addNewActivity()">Add New Activity!</div>
+	</div>
+</form>

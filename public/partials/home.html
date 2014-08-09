@@ -1,0 +1,12 @@
+<div>
+	<h1>Home Page</h1>
+	<a class="btn btn-primary form-control" href="#/play">Play</a>
+	<a class="btn btn-primary form-control" href="#/profile/{{currentUserId}}">Your Profile</a>
+	<a class="btn btn-primary form-control" href="#/community">Check out how the community is doing</a>
+	<div class="btn btn-primary form-control" ng-click="logout()">Logout</div>
+	<!-- {{ users | json }} -->
+	<div ng-repeat="user in users">
+		{{ user | json }}
+		<br>
+	</div>
+</div>

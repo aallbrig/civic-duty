@@ -1,0 +1,17 @@
+<div ng-controller="LoginCtrl">
+	<div class="panel panel-danger" ng-show="flash">
+		<div class="panel-heading">
+			Error logging in
+		</div>
+		<div class="panel-body">
+			{{flash}}
+		</div>
+	    <div class="danger text-danger bg-danger"></div>
+	</div>
+	Username:
+	<input type="text" class="form-control" ng-model="username"/>
+	Password:
+	<input type="password" class="form-control" ng-model="password" ng-enter="login()"/>
+	<br>
+	<div class="btn btn-primary form-control" ng-click="login()">Submit</div>
+</div>
